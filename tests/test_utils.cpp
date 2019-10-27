@@ -13,7 +13,8 @@ static void test_1() {
 
     {
         Proxy proxy(input);
-        getInput(&output);
+        getInput(&output, stdin);
+        proxy.output();
     }
 
     ASSERT_EQ(input, output);
@@ -25,7 +26,8 @@ static void test_2() {
 
     {
         Proxy proxy(input);
-        getInput(&output);
+        getInput(&output, stdin);
+        proxy.output();
     }
 
     ASSERT_EQ(input, output);
@@ -37,7 +39,8 @@ static void test_3() {
 
     {
         Proxy proxy(input);
-        getInput(&output);
+        getInput(&output, stdin);
+        proxy.output();
     }
 
     ASSERT_EQ(input, output);

@@ -24,7 +24,7 @@ int count_tokens(const char *input) {
 int split_into_strings(const char *input, char ***output) {
     int tokensCount = count_tokens(input);
 
-    char ** array = malloc(tokensCount * sizeof(char*));
+    char **array = malloc(tokensCount * sizeof(char *));
     int curToken = 0;
     int lastSpace = -1;
     int i = 0;
@@ -53,19 +53,17 @@ int split_into_strings(const char *input, char ***output) {
 }
 
 
-
-void hex_2_ascii() {
-    char *str;
-    getInput(&str);
-    unsigned long strLen = strlen(str);
+void hex_2_ascii(const char *input, char **output) {
+    unsigned long strLen = strlen(input);
     char **tokens;
-    int tokensCount = split_into_strings(str, &tokens);
-    char *output;
-    output = malloc(sizeof(char) * tokensCount + 1);
-    output[0] = 0;
+    int tokensCount = split_into_strings(input, &tokens);
+    char *tmp;
+    tmp = malloc(sizeof(char) * tokensCount + 1);
+    tmp[0] = 0;
     for (unsigned long i = 0; i < tokensCount; ++i) {
-        sprintf(output + strlen(output), "%c", (int)strtol(tokens[i], NULL, 16));
+        sprintf(tmp + strlen(tmp), "%c", (int) strtol(tokens[i], NULL, 16));
     }
-    output[strlen(output)] = 0;
-    printf("%s", output);
+    tmp[strlen(tmp)] = 0;
+    free(tokens);
+    *output = tmp;
 }

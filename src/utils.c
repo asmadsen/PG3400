@@ -3,17 +3,17 @@
 #include <string.h>
 #include "utils.h"
 
-void getInput(char **pString) {
-    char * destination = malloc(sizeof(char) * 200);
+void getInput(char **pString, FILE *stream) {
+    char *destination = malloc(sizeof(char) * 200);
     destination[0] = 0;
     while (1) {
         char *input = malloc((sizeof(char) * 100) + 1);
         input[0] = 0;
-        fgets(input, 100, stdin);
+        fgets(input, 100, stream);
         if (!strlen(input)) {
             break;
         }
-        char *tmp = malloc(sizeof(char)* (strlen(destination) + 100));
+        char *tmp = malloc(sizeof(char) * (strlen(destination) + 100));
         strncpy(tmp, destination, strlen(destination));
         strncpy(tmp + strlen(destination), input, strlen(input));
         tmp[strlen(destination) + strlen(input)] = 0;
@@ -25,4 +25,14 @@ void getInput(char **pString) {
     }
 
     *pString = destination;
+}
+
+int loadFromFile(const char *file, FILE **stream) {
+    FILE *tmp;
+    if ((tmp = fopen(file, "r"))) {
+        *stream = tmp;
+        return 0;
+    }
+
+    return 1;
 }
