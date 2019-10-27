@@ -2,7 +2,8 @@
 
 Your name and student id:
 ~~~~
-
+Andreas Storesund Madsen
+705313
 ~~~~
 
 ## Go through the [Setup Instructions](SETUP.md)
