@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "utils.h"
 #include <string.h>
+
 #include "hex_2_ascii.h"
 
 int count_tokens(const char *input) {

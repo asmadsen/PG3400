@@ -123,6 +123,16 @@ diff data/ascii_output.txt data/ascii_test_1.txt
 ## Too Easy?
 6. Add [Base64](https://en.wikipedia.org/wiki/Base64) encoding and decoding (including test and test files).
 
+~~~~
+./cmake-build-debug/test_ascii_2_base64
+cat data/ascii_test_1.txt | ./ascii2base64 | diff data/base64_test_1.txt -
+~~~~
+
+~~~~
+./cmake-build-debug/test_base64_2_ascii
+cat data/base64_test_1.txt | ./base642ascii | diff data/ascii_test_1.txt -
+~~~~
+
 ## Tips
 - __READ THE TESTS__
 - *Add more tests*

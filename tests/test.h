@@ -1,3 +1,4 @@
+#include <string>
 #ifndef C_ON_LINUX_HOME_EXAM_TEST_H
 #define C_ON_LINUX_HOME_EXAM_TEST_H
 

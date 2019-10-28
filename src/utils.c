@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 #include "utils.h"
 
 void getInput(char **pString, FILE *stream) {
@@ -35,4 +36,13 @@ int loadFromFile(const char *file, FILE **stream) {
     }
 
     return 1;
+}
+
+int binToDec(const int *bitArray) {
+    char *data = malloc(sizeof(char) * 9);
+    for (int i = 0; i < 8; ++i) {
+        data[i] = (char)('0' + bitArray[i]);
+    }
+    data[8] = 0;
+    return (int)strtol(data, 0, 2);
 }

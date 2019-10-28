@@ -1,4 +1,3 @@
-#include "proxy.h"
 #include "test.h"
 
 #include <cassert>
@@ -12,14 +11,10 @@ static void test_1() {
     std::string output;
 
     {
-        std::string input = "Svefg qb vg, gura qb vg evtug, gura qb vg orggre. - Nqql Bfznav";
-        Proxy proxy(input);
-        char *uInput;
-        getInput(&uInput, stdin);
+        char *input = (char *) "Svefg qb vg, gura qb vg evtug, gura qb vg orggre. - Nqql Bfznav";
         char *uOutput;
-        rot13_2_ascii(uInput, &uOutput);
+        rot13_2_ascii(input, &uOutput);
         output.assign(uOutput);
-        proxy.output();
     }
 
     std::string expect = "First do it, then do it right, then do it better. - Addy Osmani";
@@ -30,14 +25,10 @@ static void test_2() {
     std::string output;
 
     {
-        std::string input = "Gur tbbq arjf nobhg pbzchgref vf gung gurl qb jung lbh gryy gurz gb qb. Gur onq arjf vf gung gurl qb jung lbh gryy gurz gb qb. - Grq Aryfba";
-        Proxy proxy(input);
-        char *uInput;
-        getInput(&uInput, stdin);
+        char *input = (char *) "Gur tbbq arjf nobhg pbzchgref vf gung gurl qb jung lbh gryy gurz gb qb. Gur onq arjf vf gung gurl qb jung lbh gryy gurz gb qb. - Grq Aryfba";
         char *uOutput;
-        rot13_2_ascii(uInput, &uOutput);
+        rot13_2_ascii(input, &uOutput);
         output.assign(uOutput);
-        proxy.output();
     }
 
     std::string expect = "The good news about computers is that they do what you tell them to do. The bad news is that they do what you tell them to do. - Ted Nelson";
@@ -48,14 +39,10 @@ static void test_3() {
     std::string output;
 
     {
-        std::string input = "Gubfr ubhef bs cenpgvpr, naq snvyher, ner n arprffnel cneg bs gur yrneavat cebprff. - Tvan Fvcyrl";
-        Proxy proxy(input);
-        char *uInput;
-        getInput(&uInput, stdin);
+        char *input = (char *) "Gubfr ubhef bs cenpgvpr, naq snvyher, ner n arprffnel cneg bs gur yrneavat cebprff. - Tvan Fvcyrl";
         char *uOutput;
-        rot13_2_ascii(uInput, &uOutput);
+        rot13_2_ascii(input, &uOutput);
         output.assign(uOutput);
-        proxy.output();
     }
 
     std::string expect = "Those hours of practice, and failure, are a necessary part of the learning process. - Gina Sipley";

@@ -7,12 +7,16 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <ascii_2_base64.h>
+#include <base64_2_ascii.h>
 
 enum Mode {
     HEX_2_ASCII,
     ASCII_2_HEX,
     rot13_2_ASCII,
     ASCII_2_rot13,
+    ASCII_2_BASE64,
+    BASE64_2_ASCII,
     MODE_ERROR
 };
 
@@ -29,6 +33,10 @@ enum Mode getMode(char *program_name) {
         return rot13_2_ASCII;
     if (strcmp("/ascii2rot13", program_name) == 0)
         return ASCII_2_rot13;
+    if (strcmp("/ascii2base64", program_name) == 0)
+        return ASCII_2_BASE64;
+    if (strcmp("/base642ascii", program_name) == 0)
+        return BASE64_2_ASCII;
 
     return MODE_ERROR;
 }
@@ -77,6 +85,12 @@ int main(int argc, char *argv[]) {
             break;
         case ASCII_2_rot13:
             ascii_2_rot13(input, &output);
+            break;
+        case BASE64_2_ASCII:
+            base64_2_ascii(input, &output);
+            break;
+        case ASCII_2_BASE64:
+            ascii_2_base64(input, &output);
             break;
         case MODE_ERROR:
         default:

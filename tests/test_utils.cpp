@@ -46,9 +46,17 @@ static void test_3() {
     ASSERT_EQ(input, output);
 }
 
+static void test_4() {
+    int input[8] = {0,1,0,0,0,0,0,1};
+    int output = binToDec(input);
+
+    ASSERT(65 == output);
+}
+
 int main() {
     test_1();
     test_2();
     test_3();
+    test_4();
     return EXIT_SUCCESS;
 }
