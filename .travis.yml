@@ -1,0 +1,6 @@
+services:
+  - docker
+
+script:
+  - docker pull asmadsen/toolchain
+  - docker run --rm -v $PWD:/tmp/app:ro -w /tmp/app asmadsen/toolchain bash docker-test.sh

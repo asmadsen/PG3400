@@ -9,6 +9,7 @@ void printSuccess(const char *function) {
 void printError(const char *assertion, const char *file,
                 unsigned int line, const char *function) {
   printf("%s: Assertion '%s' failed - %s:%d\n", function, assertion, file, line);
+  exit(1);
 }
 
 void printError(const char *lhs_name,
@@ -21,6 +22,7 @@ void printError(const char *lhs_name,
   printf("%s: '%s' not equal to '%s' - %s:%d\n", function, lhs_name, rhs_name, file, line);
   printf("%s: %s\n", lhs_name, lhs.c_str());
   printf("%s: %s\n", rhs_name, rhs.c_str());
+  exit(1);
 }
 
 #define ASSERT_EQ(lhs, rhs)              \
