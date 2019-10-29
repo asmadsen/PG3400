@@ -1,4 +1,4 @@
-# PG3400 Home Exam 2019
+# PG3400 Home Exam 2019 [![Build Status](https://travis-ci.com/Westerdals/pg3400-home-exam-asmadsen.svg?token=CtziNfWQqQxtrfWutyqx&branch=master)](https://travis-ci.com/Westerdals/pg3400-home-exam-asmadsen)
 
 Your name and student id:
 ~~~~
