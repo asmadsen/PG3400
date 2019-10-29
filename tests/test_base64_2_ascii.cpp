@@ -17,7 +17,7 @@ static void test_1() {
         output.assign(uOutput);
     }
 
-    std::string expect = "Give someone a program, you frustrate them for a day; teach them how to program, you frustrate them for a lifetime. - David Leinweber";
+    std::string expect = "Give someone a program, you create errors; teach them how to program, you frustrate them for a lifetime. - David Leinweber";
     ASSERT_EQ(expect, output);
 }
 
